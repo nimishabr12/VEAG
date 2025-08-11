@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VoltCut — Video Editing Agency</title>
+  <meta name="description" content="Toronto-based video editing agency crafting scroll-stopping content for brands, creators, and startups." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0B0B0F',
+            mist: '#A3A3B2',
+            glow: '#7C5CFF',
+            accent: '#00E0B8'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,0.25)'
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-6px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body { background: #0B0B0F; color: white; }
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(8px); }
+    .grad-ring { background: conic-gradient(from 180deg at 50% 50%, rgba(124,92,255,0.35), rgba(0,224,184,0.35), rgba(124,92,255,0.35)); filter: blur(40px); }
+    .container-tight { max-width: 1100px; }
+    .video-card:hover video:not([controls]) { filter: saturate(120%); }
+    video::-webkit-media-controls-enclosure { background: transparent; }
+    dialog::backdrop { background: rgba(0,0,0,0.65); }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur">
+    <div class="mx-auto container-tight px-4 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="h-8 w-8 rounded-xl bg-glow/20 border border-white/10 flex items-center justify-center">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M3 7l9-5 9 5-9 5-9-5z" stroke="white" stroke-width="1.5"/><path d="M3 17l9 5 9-5" stroke="white" stroke-opacity=".6" stroke-width="1.5"/></svg>
+        </div>
+        <span class="text-white/90 font-semibold tracking-tight">VoltCut</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/70">
+        <a href="#work" class="hover:text-white">Work</a>
+        <a href="#services" class="hover:text-white">Services</a>
+        <a href="#process" class="hover:text-white">Process</a>
+        <a href="#testimonials" class="hover:text-white">Testimonials</a>
+        <a href="#pricing" class="hover:text-white">Pricing</a>
+        <a href="#contact" class="px-4 py-2 rounded-xl bg-white text-ink font-medium hover:opacity-90">Get a Quote</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/10 text-white/80">Menu</button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-black/80 backdrop-blur">
+      <div class="px-4 py-3 space-y-2 text-white/80">
+        <a href="#work" class="block py-2">Work</a>
+        <a href="#services" class="block py-2">Services</a>
+        <a href="#process" class="block py-2">Process</a>
+        <a href="#testimonials" class="block py-2">Testimonials</a>
+        <a href="#pricing" class="block py-2">Pricing</a>
+        <a href="#contact" class="block py-2">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full grad-ring opacity-40"></div>
+      <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full grad-ring opacity-30"></div>
+    </div>
+    <div class="mx-auto container-tight px-4 py-20">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-xs text-white/70 mb-6 glass">
+          <span>Toronto • Remote</span><span class="opacity-50">•</span><span>48h Express Edits</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight">Video edits that <span class="text-glow">convert</span> and <span class="text-accent">stick</span>.</h1>
+        <p class="mt-5 text-white/70 text-lg">We turn raw footage into scroll-stopping ads, trailers, and YouTube videos. Strategy-first. Fast. On brand.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#work" class="px-5 py-3 rounded-xl bg-white text-ink font-semibold">See Recent Work</a>
+          <a href="#contact" class="px-5 py-3 rounded-xl border border-white/20 text-white/90 hover:bg-white/5">Get a Free Cut Plan</a>
+        </div>
+        <div class="mt-10 flex items-center gap-6 text-sm text-white/60">
+          <div class="flex -space-x-3">
+            <img class="h-8 w-8 rounded-full border border-white/10" src="https://i.pravatar.cc/64?img=11" alt="">
+            <img class="h-8 w-8 rounded-full border border-white/10" src="https://i.pravatar.cc/64?img=32" alt="">
+            <img class="h-8 w-8 rounded-full border border-white/10" src="https://i.pravatar.cc/64?img=8" alt="">
+          </div>
+          <span><span id="heroStat" class="font-semibold">120+</span> projects shipped</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT WORK -->
+  <section id="work" class="mx-auto container-tight px-4 py-16">
+    <div class="flex items-end justify-between">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold">Recent work</h2>
+        <p class="text-white/60 mt-2">Tap to play. Click any card to open a full preview.</p>
+      </div>
+      <a id="workCta" href="#contact" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5">
+        Book a discovery call
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="white" stroke-width="1.5"/></svg>
+      </a>
+    </div>
+    <div id="workGrid" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="mx-auto container-tight px-4 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold">What we do</h2>
+    <div id="servicesGrid" class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="mx-auto container-tight px-4 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold">How it works</h2>
+    <ol id="processList" class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 list-decimal list-inside"></ol>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="mx-auto container-tight px-4 py-16">
+    <div class="flex items-end justify-between">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold">Client love</h2>
+        <p class="text-white/60 mt-2">Editable testimonials with logos and roles.</p>
+      </div>
+      <div class="hidden md:flex gap-2">
+        <button id="prevTest" class="px-3 py-2 rounded-lg border border-white/10">Prev</button>
+        <button id="nextTest" class="px-3 py-2 rounded-lg border border-white/10">Next</button>
+      </div>
+    </div>
+    <div class="relative mt-8">
+      <div id="testTrack" class="flex gap-6 overflow-x-auto scroll-smooth snap-x"></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="mx-auto container-tight px-4 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold">Pricing</h2>
+    <p class="text-white/60 mt-2">Transparent packages. Custom retainers available.</p>
+    <div id="pricingGrid" class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto container-tight px-4 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold">Tell us about your project</h2>
+        <p class="text-white/60 mt-3">Get a no-pressure plan with timeline, hooks, and deliverables.</p>
+        <ul class="mt-6 space-y-2 text-white/70 text-sm">
+          <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-accent"></span>48–72h turnaround available</li>
+          <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-glow"></span>Source files included</li>
+          <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-white"></span>Toronto-based, global clients</li>
+        </ul>
+      </div>
+      <form id="contactForm" class="glass rounded-2xl p-6 space-y-4">
+        <div>
+          <label class="block text-sm text-white/70 mb-1">Name</label>
+          <input name="name" required class="w-full bg-transparent border border-white/15 rounded-xl px-4 py-3" placeholder="Jane from Acme" />
+        </div>
+        <div>
+          <label class="block text-sm text-white/70 mb-1">Email</label>
+          <input type="email" name="email" required class="w-full bg-transparent border border-white/15 rounded-xl px-4 py-3" placeholder="jane@acme.com" />
+        </div>
+        <div>
+          <label class="block text-sm text-white/70 mb-1">Project details</label>
+          <textarea name="details" rows="4" class="w-full bg-transparent border border-white/15 rounded-xl px-4 py-3" placeholder="Short-form ads for an app launch, footage ready..."></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="text-xs text-white/50">This demo stores nothing. Wire to your form backend.</div>
+          <button class="px-5 py-3 rounded-xl bg-white text-ink font-semibold">Send</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10">
+    <div class="mx-auto container-tight px-4 py-10 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="font-semibold text-white/80">VoltCut</span>
+        <span>© <span id="yearSpan"></span></span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-white">Instagram</a>
+        <a href="#" class="hover:text-white">YouTube</a>
+        <a href="#" class="hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Preview Modal -->
+  <dialog id="videoModal" class="rounded-2xl p-0 bg-black/95 border border-white/10 max-w-5xl w-[92%]">
+    <div class="flex justify-end p-2">
+      <button id="closeModal" class="px-3 py-1 rounded-lg border border-white/10 text-white/80">Close</button>
+    </div>
+    <div class="px-4 pb-4">
+      <video id="modalVideo" class="w-full rounded-xl shadow-soft" controls playsinline></video>
+      <div id="modalCaption" class="text-white/70 text-sm mt-3"></div>
+    </div>
+  </dialog>
+
+  <!-- DATA & APP -->
+  <script id="site-data" type="application/json">
+  {
+    "brand": {
+      "name": "VoltCut",
+      "stat": "120+",
+      "hero_line": "Video edits that convert and stick."
+    },
+    "work": [
+      {
+        "title": "App Launch Ad — HyperCuts",
+        "caption": "15s Meta ad, CTR +2.1x",
+        "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+        "poster": "https://images.unsplash.com/photo-1485841890310-6a055c88698a?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        "title": "Creator Trailer — Travel",
+        "caption": "45s YouTube trailer",
+        "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm",
+        "poster": "https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        "title": "Brand Sizzle — SaaS",
+        "caption": "30s product reel",
+        "src": "https://filesamples.com/samples/video/mp4/sample_960x540.mp4",
+        "poster": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        "title": "UGC Ad — E‑commerce",
+        "caption": "9:16 TikTok ad",
+        "src": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4",
+        "poster": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        "title": "Event Recap — Conference",
+        "caption": "60s highlight cut",
+        "src": "https://filesamples.com/samples/video/mp4/sample_1280x720.mp4",
+        "poster": "https://images.unsplash.com/photo-1522199794611-8e5f0c0b7e8a?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        "title": "Explainer — Fintech",
+        "caption": "Animated explainer",
+        "src": "https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4",
+        "poster": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop"
+      }
+    ],
+    "services": [
+      {"name":"Short‑form Ads","desc":"High‑retention 9:16 edits for TikTok, Reels, Shorts.","bullets":["Hook-first scripting","Motion graphics","Native captions"]},
+      {"name":"YouTube & Trailers","desc":"Crisp storytelling for long‑form and trailers.","bullets":["Narrative editing","Sound design","Thumbnail kit"]},
+      {"name":"Brand Reels","desc":"Product reels and sizzles for launches.","bullets":["Color & grade","Logo animations","Multiple aspect ratios"]}
+    ],
+    "process": [
+      "Discovery call: goals, audience, examples",
+      "Cut plan: hooks, beats, deliverables",
+      "Editing: first cut in 72h (rush in 48h)",
+      "Feedback: time‑coded comments",
+      "Final polish: grade, mix, captions",
+      "Delivery: source files + exports"
+    ],
+    "testimonials": [
+      {
+        "quote": "They didn’t just edit — they shaped the story. Our CPI dropped 26% in week one.",
+        "author": "Maya Singh",
+        "role": "Growth Lead, Fincasa",
+        "avatar": "https://i.pravatar.cc/96?img=12",
+        "logo": "https://dummyimage.com/80x24/ffffff/000000.png&text=Fincasa"
+      },
+      {
+        "quote": "The 45s trailer made our channel pop. Watch time up, subs up — easy recommend.",
+        "author": "Arjun Verma",
+        "role": "Creator, TravelWithArjun",
+        "avatar": "https://i.pravatar.cc/96?img=56",
+        "logo": "https://dummyimage.com/80x24/ffffff/000000.png&text=ArjunTV"
+      },
+      {
+        "quote": "Fast, on brand, and collaborative. The product reel looked like a million bucks.",
+        "author": "Chloe Park",
+        "role": "Head of Marketing, Lumen",
+        "avatar": "https://i.pravatar.cc/96?img=24",
+        "logo": "https://dummyimage.com/80x24/ffffff/000000.png&text=LUMEN"
+      }
+    ],
+    "pricing": [
+      {
+        "name":"Starter",
+        "price":"$1,250",
+        "desc":"One polished edit + 2x cutdowns",
+        "items":["1x 30–60s edit","2x 15s cutdowns","Basic captions","2 revisions"]
+      },
+      {
+        "name":"Growth",
+        "price":"$2,400",
+        "desc":"Best for launches & ads",
+        "items":["2x 30–60s edits","4x 15s cutdowns","Motion graphics","Priority turnaround"]
+      },
+      {
+        "name":"Retainer",
+        "price":"Custom",
+        "desc":"Predictable content, weekly",
+        "items":["Weekly deliverables","Hook bank + scripts","Dedicated editor","Slack + 48h SLA"]
+      }
+    ]
+  }
+  </script>
+  <script src="./scripts/app.js"></script>
+</body>
+</html>
